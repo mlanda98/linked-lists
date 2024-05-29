@@ -55,6 +55,17 @@ class LinkedList {
   getHead(){
     return this.head ? this.head.value : null;
   }
+
+  getTail(){
+    if  (this.head === null){
+      return null;
+    }
+    let current = this.head;
+    while(current.nextNode !== null){
+      current = current.nextNode;
+    }
+    return current.value;
+  }
   display(){
     const nodes = [];
     let current = this.head;
@@ -74,3 +85,4 @@ ll.prepend(20);
 ll.display();
 console.log(ll.getSize());
 console.log(ll.getHead());
+console.log(ll.getTail());
