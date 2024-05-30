@@ -99,11 +99,22 @@ class LinkedList {
     while (current.nextNode.nextNode !== null){
       current = current.nextNode;
     }
-    
+
     const value = current.nextNode.value;
     current.nextNode = null;
     this.size--;
     return value;
+  }
+
+  contains(value){
+    let current = this.head;
+    while (current !== null){
+      if (current.value === value){
+        return true;
+      }
+      current = current.nextNode;
+    }
+    return false;
   }
 
   display(){
@@ -129,3 +140,4 @@ console.log(ll.getTail());
 console.log(ll.at(4));
 console.log(ll.pop());
 ll.display();
+console.log(ll.contains(4));
