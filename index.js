@@ -83,6 +83,28 @@ class LinkedList {
     return null;
   }
 
+  pop(){
+    if (this.head === null){
+      return null;
+    }
+
+    if (this.head.nextNode === null){
+      const value = this.head.value;
+      this.head = null;
+      this.size--;
+      return value;
+    }
+    
+    let current = this.head;
+    while (current.nextNode.nextNode !== null){
+      current = current.nextNode;
+    }
+    
+    const value = current.nextNode.value;
+    current.nextNode = null;
+    this.size--;
+    return value;
+  }
 
   display(){
     const nodes = [];
@@ -105,3 +127,5 @@ console.log(ll.getSize());
 console.log(ll.getHead());
 console.log(ll.getTail());
 console.log(ll.at(4));
+console.log(ll.pop());
+ll.display();
