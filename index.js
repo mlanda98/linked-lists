@@ -152,4 +152,4 @@ console.log(ll.at(4));
 console.log(ll.pop());
 ll.toString();
 console.log(ll.contains(4));
-console.log(ll.find(4));
+console.log(ll.find(2));
