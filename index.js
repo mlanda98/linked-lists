@@ -117,7 +117,18 @@ class LinkedList {
     return false;
   }
 
-  display(){
+  find(value){
+    let current = this.head;
+    while (current !== null){
+      if (current.value === value){
+        return current;
+      }
+      current = current.nextNode;
+    }
+    return null;
+  }
+
+  toString(){
     const nodes = [];
     let current = this.head;
     while (current != null){
@@ -133,11 +144,12 @@ ll.append(1);
 ll.append(2);
 ll.append(3);
 ll.prepend(4);
-ll.display();
+ll.toString();
 console.log(ll.getSize());
 console.log(ll.getHead());
 console.log(ll.getTail());
 console.log(ll.at(4));
 console.log(ll.pop());
-ll.display();
+ll.toString();
 console.log(ll.contains(4));
+console.log(ll.find(4));
